@@ -9,6 +9,7 @@ tags:
 - open government
 - transparency
 - how we work
+- convincing stakeholders
 excerpt: "We've always been open about our code, but we decided to experiment with being open with our project management as well. We've opened up the Trello board for a project we're working on with the Environmental Protection Agency to the public, and the results have been fantastic."
 description: "We've always been open about our code, but we decided to experiment with being open with our project management as well. We've opened up the Trello board for a project we're working on with the Environmental Protection Agency to the public, and the results have been fantastic."
 image: /assets/blog/e-manifest/e-manifest-trello.jpg
@@ -89,7 +90,7 @@ There are five major reasons why you should be this transparent too:
 
 Studies have shown that simply knowing someone could be watching you has a demonstrable effect on behavior. We’re using this concept for good and applying it to our product development process. If I know someone can look at my code, see what I’m working on, or look at our project management software and see how much is getting done, I’m motivated to make my work just a little bit better.
 
-##2. Aggressively over-share, and default to public.
+## 2. Aggressively over-share, and default to public.
 
 By defaulting to public, we don’t have to have constant conversations
 about whether this deserves to be made public or not. Instead, we only

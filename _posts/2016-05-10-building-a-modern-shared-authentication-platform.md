@@ -4,9 +4,11 @@ date: 2016-05-10 14:00
 authors:
 - joel-minton
 tags:
+- login.gov
 - platforms
 - identity
 - security
+- modern practices
 excerpt: "18F is working iteratively with a team of technologists from across the government to build a platform for users who need to log in to government services. Every consumer-facing service the government offers will benefit from this platform, enhancing the privacy and security of online interactions for the public and for agencies."
 description: "18F is working iteratively with a team of technologists from across the government to build a platform for users who need to log in to government services. Every consumer-facing service the government offers will benefit from this platform, enhancing the privacy and security of online interactions for the public and for agencies."
 image: /assets/blog/login-gov/diagram.png
@@ -80,7 +82,7 @@ our goals by:
 -   Preserving privacy by mitigating privacy risks and adhering to all federal privacy guidelines
 
 President Obama’s [Cybersecurity National Action
-Plan](https://www.whitehouse.gov/the-press-office/2016/02/09/fact-sheet-cybersecurity-national-action-plan)
+Plan](https://obamawhitehouse.archives.gov/the-press-office/2016/02/09/fact-sheet-cybersecurity-national-action-plan)
 calls for, among other things, an initiative to empower Americans to
 secure their online accounts by shifting from just passwords to
 easy-to-use multi-factor authentication so they can further safeguard

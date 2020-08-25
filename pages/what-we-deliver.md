@@ -1,97 +1,98 @@
 ---
 title: What we deliver
 permalink: /what-we-deliver/
-layout: default-intro
-lead: We help federal agencies build, buy, and share modern digital services to improve the user experience of government.
+layout: primary
+lead: Strategies and services that help agencies provide excellent value to the public.
 content_wide: true
-redirect_from: /consulting/
+content_focus: false
+redirect_from:
+  - /consulting/
+  - /what-we-deliver/military-onesource/
+  - /what-we-deliver/every-kid-in-a-park/
+  - /what-we-deliver/micro-purchase-marketplace/
+  - /what-we-deliver/ready-2-serve/
+  - /what-we-deliver/new-ten/
+banner_cta: true
+gridless: true
 ---
+<div class="grid-container usa-section break-bottom-gray">
+  <section class="grid-row">
+    <div class="tablet:grid-col-8">
+      <p>
+        18F partners with federal agencies to improve the user experience of government 
+        services by helping them build and buy technology. If you're looking to implement 
+        a requirement, update a public-facing website, or digitize a process, 18F can work with 
+        you to build a product or craft and execute an effective agile acquisition strategy.
+      </p>
+    </div>
+  </section>
+</div>
 
-<section class="usa-grid-full usa-section section-list">
-  <div class="usa-width-one-sixth">
-    <img class="usa-img-circle" src="{{ site.baseurl }}/assets/img/home-icons/custom-products.svg" alt="">
-  </div>
-  <div class="usa-width-two-thirds">
-{% markdown %}
-### Custom products to solve your problems
+<div class="grid-container">
+  <section class="usa-section break-bottom-gray">
+    <div class="usa-section-bottom">
+      <h2>Case Studies</h2>
+      <div class="grid-row grid-gap">
+        {% assign featured_services = site.data.featured_services %}
+        {% assign projects_list = site | find_collection: 'services_projects' | weighted_sort: 'project_weight', 'title' %}
+        {% for featured in featured_services %}
+          {% assign project = projects_list | where: "agency", featured.agency | first %}
+          {% include card.html
+          image_src=project.image
+          image_alt=project.image_accessibility
+          image_icon=project.image_icon
+          agency=project.agency
+          tagline=project.title
+          description=project.excerpt
+          link=project.permalink
+          %}
+        {% endfor %}
+      </div>
+    </div>
+    {%- comment -%} <p>
+      <a class="link-arrow-right post-link-continue_reading" href="{{ '/how-we-work/' | prepend: site.baseurl }}">
+        See all case studies
+        {% include svg/icons/arrow-right.svg %}
+      </a>
+    </p> {%- endcomment -%}
+  </section>
+</div>
 
-If your agency’s project has a digital component, our team of software developers, visual designers, writers, and security experts can help you build it. We can help you:
-
-- Improve a challenging user process by reimagining a daunting task, as we did with the [U.S. Citizenship and Immigration Service](https://my.uscis.gov/) and their immigration and visa processes.
-- Build a new site and API to showcase and synthesize data from multiple sources, as we did with Department of Education's [College Scorecard]({{ site.baseurl }}/project/ed-college-scorecard/).
-- Help you make your data more accessible with a user-friendly site and developer tools, as we did with the [Federal Election Commission]({{ site.baseurl }}/project/fec-gov/).
-- Build web-based tools to streamline internal agency processes, as we did with [Communicart](https://cap.18f.gov/) and [CALC](https://calc.gsa.gov/).
-- Scope a solution or collaborate on an idea in a way that empowers you to meet the needs of your users, as we did with the [Department of Labor’s Wage and Hour Division](https://18f.gsa.gov/2015/09/09/how-a-two-day-spring-moved-an-agency-twenty-years-forward/).
-- Do user research and discovery sprints to promote a new digital model that houses information, as we did with NASA and the National Oceanic and Atmospheric Administration’s [Climate Discovery project](https://climate-data-user-study.18f.gov/).
-{% endmarkdown %}
-  </div>
+<section class="grid-container usa-section break-bottom-gray">
+  <section class="pad-right-left">
+    <div class="home-testimonial">
+      18F’s philosophy to build everything openly by default has been a key success factor in our ability to build credibility with the external stakeholders who have been critical of us previously. More importantly, this way of building facilitates innovation in an eco-centric manner as opposed to just within the government or a few entities.
+      <span>
+        - Christina Ho, Former Deputy Assistant Secretary, Office of Accounting Policy & Financial Transparency, Department of the Treasury
+      </span>
+    </div>
+  </section>
 </section>
 
-<section class="usa-grid-full usa-section section-list">
-  <div class="usa-width-one-sixth">
-    <img src="{{ site.baseurl }}/assets/img/home-icons/innovative-ways.svg" alt="">
-  </div>
-  <div class="usa-width-two-thirds">
-{% markdown %}
-### Innovative ways to buy technology
-
-We believe federal IT acquisitions can be faster, cheaper, and produce better results. If your agency is developing a new request for quotation for IT services or is interested in innovative ways to buy technology, our team is excited to work with you. We can help you:
-
-- Write agile, modular, and user-centered design into your request for quotations through our RFP Ghostwriting service, like we did with the [Department of Health and Human Services]({{ site.baseurl }}/project/hhs-states/).
-- Develop a marketplace to buy IT services using modern techniques, like we did with the [Agile Blanket Purchase Agreement](https://pages.18f.gov/ads-bpa/).
-- Buy small pieces of open source code to advance your projects, like we’re doing with our [micro-purchase platform](https://micropurchase.18f.gov/).
-{% endmarkdown %}
-  </div>
-</section>
-
-<section class="usa-grid-full usa-section section-list">
-  <div class="usa-width-one-sixth">
-    <img src="{{ site.baseurl }}/assets/img/home-icons/government.svg" alt="">
-  </div>
-  <div class="usa-width-two-thirds">
-{% markdown %}
-### Platforms built for government
-
-Federal agencies face a unique set of technology problems. We’re building a suite of secure, scalable tools and platforms that any agency can use to solve these common problems. Our platforms are built with the needs of government addressed right at the beginning and are being actively improved to meet your needs. We can help you:
-
-- Host your applications in the cloud with our [cloud.gov platform](https://cloud.gov/).
-- Build customizable and easy-to-maintain static sites with the [Federalist platform](https://federalist.18f.gov/).
-- Release and manage your API with [api.data.gov](https://api.data.gov/).
-{% endmarkdown %}
-  </div>
-</section>
-
-<section class="usa-grid-full usa-section section-list">
-  <div class="usa-width-one-sixth">
-    <img src="{{ site.baseurl }}/assets/img/home-icons/path.svg" alt="">
-  </div>
-  <div class="usa-width-two-thirds">
-{% markdown %}
-### A path to becoming a digitally-powered organization
-
-We can embed a fully-dedicated 18F team within your agency to work hand-in-hand with you to increase your internal digital capacity, help you form new digital habits, and ultimately drive organizational culture change. We can help you:
-
-- Attract, empower, and grow your own digital team.
-- Adopt a DevOps culture and begin a transition to the cloud.
-- Institute lean-agile practices, including agile acquisitions.
-- Establish a model to modernize your legacy systems.
-{% endmarkdown %}
-  </div>
-</section>
-
-<section class="usa-grid-full usa-section section-list">
-  <div class="usa-width-one-sixth">
-    <img src="{{ site.baseurl }}/assets/img/home-icons/modern-techniques.svg" alt="">
-  </div>
-  <div class="usa-width-two-thirds">
-{% markdown %}
-### Modern digital service techniques
-
-We can provide your team with the skills and knowledge they need to modernize your agency’s digital services. We’ve also built a number of knowledge-sharing and documentation tools for 18F’s own use that you can copy and use at your agency. We can help you:
-
-- Run a workshop on agile software development, like the [Lego workshop we did with the Small Business Administration](https://18f.gsa.gov/2015/08/31/how-playing-with-legos-taught-executives-agile/) or the longer one we did with the [Social Security Administration](https://18f.gsa.gov/2015/02/11/a-story-of-an-agile-workshop/).
-- Host a design studio, like we did with the [Department of the Interior](https://18f.gsa.gov/2014/09/25/design-studio-onrr/).
-- Create your own lightweight knowledge sharing platform based off 18F’s [Guides](https://pages.18f.gov/guides-template/) and [Pages](https://pages.18f.gov/) projects.
-{% endmarkdown %}
-  </div>
-</section>
+<div class="usa-section background-gray">
+  <section class="grid-container">
+    {% assign agency_partners = site.data.agencies %}
+    {% assign partner_groups = agency_partners | in_groups: 3 %}
+    <h2 id="some-agencies-weve-worked-with">Some agencies we’ve worked with</h2>
+    <div>
+      <ul class="list-columns grid-row grid-gap">
+      {% for group in partner_groups %}
+        <li class="tablet:grid-col-4">
+          <ul class="list-columns list-images">
+          {% for partner in group %}
+            <li class="list-images-item">
+              <img class="list-images-image" src="{{ partner.logo | prepend: site.baseurl }}" alt="{{ partner.logo }} logo" />
+              {% if partner.agency_url %}
+                <a class="list-images-text" href="{{ partner.agency_url | prepend: site.baseurl }}">{{ partner.name }}</a>
+              {% else %}
+                <span class="list-images-text">{{ partner.name }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>

@@ -1,14 +1,25 @@
-[![Code Climate](https://codeclimate.com/github/18F/18f.gsa.gov/badges/gpa.svg)](https://codeclimate.com/github/18F/18f.gsa.gov) [![Test Coverage](https://codeclimate.com/github/18F/18f.gsa.gov/badges/coverage.svg)](https://codeclimate.com/github/18F/18f.gsa.gov/coverage)
+[![CircleCI](https://circleci.com/gh/18F/18f.gsa.gov.svg?style=shield)](https://circleci.com/gh/18F/18f.gsa.gov)
+[![Known Vulnerabilities](https://snyk.io/test/github/18F/18f.gsa.gov/badge.svg)](https://snyk.io/test/github/18F/18f.gsa.gov)
+[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
+
 
 # 18F’s flagship website
 
-This repo houses the 18F website. We use the [Draft U.S. Web Design standards](https://standards.usa.gov/) as a front end framework. The site is built and served through [the Federalist platform](https://federalist.18f.gov).
+This repository houses the 18F website. We use the [U.S. Web Design System](https://designsystem.digital.gov/) for the front end interface. The site is built and served through [the Federalist platform](https://federalist.18f.gov/).
+
+### Style and style guide
+
+18f.gsa.gov extends the [U.S. Web Design System](https://designsystem.digital.gov/) and [18F Brand guidelines](https://pages.18f.gov/brand/) to create a style that is professional, unique, and informative. The style guide, located at [18f.gsa.gov/styleguide/](https://18f.gsa.gov/styleguide/) documents the patterns and components used to create this theme.
+
+[View style guide](https://18f.gsa.gov/styleguide/)
 
 ### History
 
-A detailed history of the work that went into developing this redesign can be found at [18F/beta.18f.gov](https://github.com/18F/beta.18f.gov). An archived copy of the original website can be found [on a Federalist preview](https://federalist.18f.gov/preview/18F/18f.gsa.gov/staging).
+A detailed history of the past work that went into developing this redesign can be found at [18F/beta.18f.gov](https://github.com/18F/beta.18f.gov).
 
-## Installation
+## Installation and Deployment
+
+__*Note:*__ _The Federalist platform does not support the use of a predefined `SHOME` environment variable which impacts the installation of the site's testing dependency [`pry`](https://github.com/pry/pry) (See the [issue](https://github.com/pry/pry/issues/2139)).  In order to build the Federalist deployment and keep the tests working in CI, a Federalist specific gemfile ([`GemfileFederalist`](./GemfileFederalist)) was created to exclude the testing and development groups during install. The Federalist script in the `package.json` is run during the build time a creates a bundler config to install the `GemfileFederalist` dependencies and not the default `Gemfile`.  Any updates to the production builds `Gemfile` should be included in the `GemfileFederalist` until a better fix is in place for the `pry` dependency or the Federalist platform._
 
 Run each of the following steps to get the site up and running.
 
@@ -17,40 +28,35 @@ Run each of the following steps to get the site up and running.
 3. `bundle install`
 4. `./serve`
 
-To enable the ability to search and see all pages related to the blog, you can run `bundle exec jekyll serve` instead of `./serve` for the server start command. This will **slow down rebuild times dramatically**, so use this command with discretion.
+To dramatically reduce the build time, there are two commands that you can run instead of `./serve`:
 
-To enable the ability to see the most recent posts, you can run `./serve-blog`. This takes longer than `./serve`, but **significantly less time** than building the entire site.
+* `./serve-fast`: This will eliminate all of the blog posts and the search index, but generates all other pages
+* `./serve-blog`: This will eliminate all but the latest three blog posts, but keeps the rest of the site intact.
 
-You should be able to see the site at: http://127.0.0.1:4000
+You should be able to see the site at: http://127.0.0.1:4000/site/
 
 ## Alternative Installation using Docker
 Using Docker can make dependencies management easier, but can also slow down your build time. You can find out more in
-[this discussion](https://github.com/18F/18f.gsa.gov/pull/1688#issue-152998027)
+[this discussion](https://github.com/18F/18f.gsa.gov/pull/1688#issue-152998027).
 
 *To try this out on MacOS:*
 
 1. Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox).
-2. Make sure Docker is running and `cd` into your project folder
+2. Make sure Docker is running and `cd` into your project folder.
 3. Run `docker-compose build` to build the docker image and its dependencies. You only need to build once, but if there was an error with the build , rebuild using  the  `--no-cache` option like so `docker-compose build --no-cache`  to avoid using the old version of the docker image.
 4. Run `docker-compose up`.
-   Note: if you want to run a single command and bypass your `Dockerfile` for debugging purposes, you can do like so `docker-compose run app <COMMAND>` (for instance, you can run bundle  `docker-compose run app bundle install`)
-5. Visit [http://192.168.99.100:4000](http://192.168.99.100:4000/) in your browser.
+   **Note**: if you want to run a single command and bypass your `Dockerfile` for debugging purposes, you can do like so `docker-compose run app <COMMAND>` (for instance, you can run bundle  `docker-compose run app bundle install`). Our site is large, so **this could take awhile**. Specifically this command will hang on `jekyll_pages_api_search: checking for Node.js` for upwards of 30 minutes on first run.
+5. Visit [http://localhost:4000/site/](http://127.0.0.1:4000/site/) in your browser. Make sure that you include the trailing slash.
+
+## Testing
+
+When adding a new tag in a blog post's `tags` key, you may need to add the new tag to the tests in the [/tests/schema/tags.yml](/tests/schema/tags.yml) list.  Note, this only applies to tags that have not already been added to the tag list.
 
 ## System security controls
 
-The site is a static website with HTML, CSS, and Javascript. Deployments are done through the Federalist platform.
+The site is a static website with HTML, CSS, and Javascript. Deployments are done through Federalist.
 
-1. Federalist runs in its own organization and space in CloudFoundry
-1. Federalist Admin: https://federalist.18f.gov/
-1. Using the Federalist editor that requires GitHub Oauth and writes commits as auth'd GitHub user, changes are then passed through a webhook back to Federalist
-1. Federalist uses a CloudFoundry S3 service to write to the bucket, the Federalist instance only derives S3 credentials from the CloudFoundry S3 service and can only read/write to federalist.18f.gov/*
-1. Federalist responds to a webhook on GitHub and runs Jekyll to generate static web files and puts them in an S3 bucket
-1. We map 18f.gsa.gov URL to the S3 bucket
-
-### Constraints
-
-* We use Cloudfront to map 18f.gsa.gov to an S3 endpoint
-* Federalist, and Cloudfront do not support the following HTTPS implementations:
-  * [HSTS Headers](https://github.com/18F/18f.gsa.gov/issues/1871)
-  * [HTTP/2](https://github.com/18F/18f.gsa.gov/issues/1872)
-  * [OSCP Stapling](https://github.com/18F/18f.gsa.gov/issues/292)
+1. Federalist runs in its own organization and space in [cloud.gov](https://cloud.gov/), which piggybacks on [AWS GovCloud](https://aws.amazon.com/govcloud-us/).
+1. Federalist Admin: https://federalist.18f.gov/.
+1. Federalist responds to a webhook on GitHub and runs Jekyll to generate static web files and puts them in an S3 bucket.
+1. We map 18f.gsa.gov URL to the S3 bucket.

@@ -4,13 +4,14 @@ description: "18F builds effective, user-centric digital services focused on the
 baseurl: "" # the subpath of your site, e.g. /blog
 permalink: pretty
 url: "https://18f.gsa.gov" # the base hostname & protocol for your sites
-federalist_url: "https://federalist.18f.gov"
 localhost: "localhost:4000"
 env: "production"
 logo: /assets/img/logos/18F-Logo-Bright-S.png
-feature_image: /assets/img/feature-background.jpg
 tag_dir: tags
 github_repo: https://github.com/18F/18f.gsa.gov/blob/master
+
+related_posts: 3
+
 
 analytics:
   google:
@@ -21,7 +22,7 @@ analytics:
 
 # blog archive at /blog
 paginate: 5
-paginate_path: "blog/page/:num"
+paginate_path: "blog/page/:num/"
 
 jekyll-archives:
   enabled:
@@ -31,18 +32,33 @@ jekyll-archives:
     tag: '/tags/:name/'
 
 collections:
+  about:
+    output: true
+    permalink: /:path/
+  principles:
+    output: true
+    permalink: /partnership-principles/:path/
+  join:
+    output: true
+    permalink: /join/:path/
   authors:
     output: true
     permalink: /author/:name/
   press:
     output: true
     permalink: /press/:name/
-  projects:
+  products_projects:
     output: true
-    permalink: /project/:path/
-  hire:
+    permalink: /what-we-deliver/:path/
+  services_projects:
+    output: true
+    permalink: /what-we-deliver/:path/
+  contact:
     output: false
-    permalink: /hire/:path/
+    permalink: /contact/:path/
+  code_of_conduct:
+    output: true
+    permalink: /code-of-conduct/:path/
   styleguide:
     output: true
     permalink: /styleguide/:path/
@@ -57,7 +73,7 @@ defaults:
   scope:
     path: "pages"
   values:
-    layout: default-intro
+    layout: primary
  -
   scope:
     path: "_authors"
@@ -65,11 +81,51 @@ defaults:
     layout: default-profile
  -
   scope:
-    path: "_hire"
+    path: "_contact"
   values:
-    layout: default-image
+    layout: primary
     # include_subnav: true
-    subnav_anchor: /hire/
+    subnav_anchor: /contact/
+ -
+  scope:
+    path: "_about"
+  values:
+    layout: primary
+    include_subnav: true
+    subnav_anchor: /about/
+ -
+  scope:
+    path: "_code_of_conduct"
+  values:
+    layout: primary
+    include_subnav: true
+    subnav_anchor: /code-of-conduct/
+ -
+  scope:
+    path: "_principles"
+  values:
+    layout: primary
+    include_subnav: true
+    subnav_anchor: /partnership-principles/
+ -
+  scope:
+    path: "_join"
+  values:
+    layout: primary
+    include_subnav: true
+    subnav_anchor: /join/
+    parent_title: Join 18F
+    parent_permalink: /join/
+ -
+  scope:
+    path: "_products_projects"
+  values:
+    layout: project-page
+ -
+  scope:
+    path: "_services_projects"
+  values:
+    layout: project-page
 
  -
   scope:
@@ -93,30 +149,51 @@ footer:
 markdown: kramdown
 highlighter: rouge
 
-include:
-  - _navigation.json
 exclude:
-  - README.md
-  - vendor
-  - node_modules
-  - CONTRIBUTING.md
-  - README.md
-  - LICENSE.md
-  - PULL_REQUEST_TEMPLATE.md
-  - ISSUE_TEMPLATE.md
-  - bin
-  - pages/our-work.html
-  - tests/**/*
-  - tests/schema/tags.yml
+- .about.yml
+- .cfignore
+- .codeclimate.yml
+- .gitignore
+- .gitmodules
+- .hound.yml
+- 404.html
+- api-endpoints
+- bin
+- build
+- circle.yml
+- config_blog.rb
+- CONTRIBUTING.md
+- docker-compose.yml
+- docker_entrypoint.rb
+- Dockerfile
+- examples/
+- favicon.ico
+- Gemfile*
+- ISSUE_TEMPLATE.md
+- killport
+- LICENSE.md
+- node_modules
+- package.json
+- pages/our-work.html
+- PULL_REQUEST_TEMPLATE.md
+- README.md
+- spec/
+- system-security-plan.yml
+- tests/
+- tests/schema/tags.yml
+- tmp/
+- vendor
 
 # jekyll plugins
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-archives
   - jekyll-redirect-from
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll_pages_api_search
+  - jekyll_oembed
 
 # Configuration for jekyll_pages_api_search plugin gem.
 jekyll_pages_api_search:

@@ -1,6 +1,3 @@
-require 'pry'
-require 'rb-readline'
-
 module Jekyll
   module Utility
     attr_reader :match
@@ -28,66 +25,25 @@ module Jekyll
     end
 
     def matches_url(page_url, url)
-      page_url = clip_char(page_url.to_s.downcase, '/')
-      url = clip_char(url.to_s.downcase, '/')
-      page_url == url || nil
-    end
-
-    def matches_collections(page, nav_item)
-      returned_page = nil
-      collections = nav_item['collections'] || nil
-      collections&.each do |collection|
-        returned_page = true if page['collection'] == collection
-      end
-      returned_page
-    end
-
-    def matches_permalink_alt(page_url, item)
-      url_alt = item['permalink_alt']
-      url_alt = clip_char(url_alt.to_s.downcase, '/')
-      page_url[0...url_alt.length] == url_alt || nil
-    end
-
-    def matches_url_parent(page, item)
-      is_match = matches_collections(page, item)
-
-      if !is_match
-        url = item['permalink']
-        page_url = page['url']
+      if url.is_a? Array
+        urls = url.map do |u|
+          page_url = clip_char(page_url.to_s.downcase, '/').split('/')[0]
+          u = clip_char(u.to_s.downcase, '/').split('/')[0]
+          # if the url group is 'blog', match date strings
+          is_blog_post = (u == 'blog') && (page_url.to_i.positive?)
+          matching_url = (page_url == u) || is_blog_post
+          matching_url || nil
+        end
+        urls.compact.any? || nil
+      else
         page_url = clip_char(page_url.to_s.downcase, '/')
         url = clip_char(url.to_s.downcase, '/')
-        is_match = page_url[0...url.length] == url || nil
-        if !is_match && item['permalink_alt']
-          matches_permalink_alt(page_url, item)
-        else
-          is_match
-        end
-      else
-        is_match
+        page_url == url || nil
       end
     end
 
-    def crawl_pages(item, page_url)
-      if matches_url(page_url, item['permalink'])
-        @match = item
-      elsif item['children']
-        item['children'].each do |child|
-          crawl_pages(child, page_url)
-        end
-      end
-    end
-
-    def find_page(page_url, nav_items)
-      unless @match
-        nav_items.each do |item|
-          break if @match
-          crawl_pages(item, page_url)
-        end
-      end
-      @match
-    end
-
-    def check_type(value, second_value = nil, third_value = nil)
+    # active: debugging
+    def debug(value, second_value = nil, third_value = nil)
       _type = value.class
       _second_type = second_value.class
       _third_type = third_value.class
@@ -102,27 +58,73 @@ module Jekyll
       document.map(&:data)
     end
 
-    def where_obj(array, first, second)
-      array.map do |object|
-        next unless object[first] && object[second]
-        new_o = {}
-        new_o[first] = object[first]
-        new_o[second] = object[second]
-        new_o
-      end.uniq
+    def where_obj(array, filter)
+      array = array.map do |object|
+        next unless !object[filter].nil? && !object[filter].empty?
+        object
+      end.compact.uniq
+      array
     end
 
     def in_groups(array, groups)
-      array.in_groups(groups)
+      array.in_groups(groups, false)
+    end
+
+    def weighted_sort(array, weight_name, sort_name)
+      weighted_group = []
+      az_group = []
+      array.each do |item|
+        if item[weight_name]
+          weighted_group << item
+        else
+          az_group << item
+        end
+      end
+
+      az_group = az_group.sort_by do |key, _value|
+        key[sort_name].downcase
+      end
+
+      weighted_group = weighted_group.sort_by do |key, _value|
+        key[sort_name].downcase
+      end.reverse
+
+      weighted_group = weighted_group.sort_by do |key, _value|
+        key[weight_name].to_f
+      end.reverse
+
+      weighted_group + az_group
     end
   end
 end
 
 class Array
-  def in_groups(num_groups)
-    return [] if num_groups.zero?
-    slice_size = (size / Float(num_groups)).ceil
-    each_slice(slice_size).to_a
+  # From Rails#in_groups
+  # http://api.rubyonrails.org/classes/Array.html#method-i-in_groups
+  def in_groups(number, fill_with = nil)
+    # size.div number gives minor group size;
+    # size % number gives how many objects need extra accommodation;
+    # each group hold either division or division + 1 items.
+    division = size.div number
+    modulo = size % number
+
+    # create a new array avoiding dup
+    groups = []
+    start = 0
+
+    number.times do |index|
+      length = division + (modulo.positive? && modulo > index ? 1 : 0)
+      groups << last_group = slice(start, length)
+      last_group << fill_with if fill_with != false &&
+                                 modulo.positive? && length == division
+      start += length
+    end
+
+    if block_given?
+      groups.each { |g| yield(g) }
+    else
+      groups
+    end
   end
 end
 Liquid::Template.register_filter(Jekyll::Utility)

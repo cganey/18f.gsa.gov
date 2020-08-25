@@ -4,7 +4,7 @@ authors:
 - andre
 tags:
 - events
-- gsa
+- general services administration
 - video
 - agile bpa
 - micro-purchase platforms
@@ -12,7 +12,7 @@ tags:
 - cloud.gov
 - data act
 - rfp ghostwriting
-- technology transformation service
+- technology transformation services
 excerpt: "The Technology Transformation Service (TTS) is already absorbing the first-mover risk of introducing modern tools and techniques, but we know that only with the help of industry will this transformation be able to spread across the federal government. As we all bring agile methodologies, human-centered design, and modular design to the government, the opportunity to improve federal digital services is immense."
 description: "Last week, the General Services Administration (GSA) held a Technology Industry Day to talk to industry leaders about the products and solutions developed by GSA and to hear feedback on how we can better engage industry on some of our emerging technology efforts, particularly as we’re establishing the Technology Transformation Service. We’re thrilled that more than 300 members of the technology industry in person and via the live stream were able to join us for this first step towards a closer partnership."
 image: /assets/blog/industry-day/slide1.jpg
@@ -33,9 +33,7 @@ Aaron Snow, Deputy Director of TTS.
 If you weren’t able to attend, you can watch the first two hours of the
 event below and [download the slidedeck from the morning presentation]({{site.baseurl}}/assets/blog/industry-day/deck-2016.pdf).
 
-<iframe width="610" height="450"
-src="https://www.youtube-nocookie.com/embed/NRAlPdiWXN8" frameborder="0"
-allowfullscreen title="GSA Technology Industry Day"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NRAlPdiWXN8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Find out more about the projects and platforms we talked about during
 the Technology Industry Day.
@@ -110,13 +108,8 @@ of HHS with California’s Department of Social Services and Office of
 Systems Integration and Code for America to [simplify the contracting
 documents](https://18f.gsa.gov/2016/03/22/helping-california-buy-a-new-child-welfare-system/)
 and to incorporate modular contracting, agile development, user-centered
-design, and open source practices into their project. Hear more from
-Stuart Drown, the California Deputy Secretary for Innovation and
-Accountability, about the project.
+design, and open source practices into their project. 
 
-<iframe width="610" height="450"
-src="https://www.youtube-nocookie.com/embed/JM4VLjRgqWo" frameborder="0"
-allowfullscreen ></iframe>
 
 ## login.gov
 

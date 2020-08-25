@@ -12,6 +12,7 @@ tags:
 - presidential innovation fellows
 - procurement
 - training
+- agency work
 excerpt: "Today, we’re thrilled to announce that the Federal Bureau of Investigation and the U.S. Department of the Treasury are the first two agencies to participate in the Digital Acquisition Accelerator Pilot."
 description: "Today, we’re thrilled to reveal that we’ve selected the Federal Bureau of Investigation and the U.S. Department of the Treasury as the first two agencies to participate in the Digital Acquisition Accelerator Pilot."
 image: /assets/blog/digital-acquisition-accelerator/daa-pilot-homepage.jpg
@@ -32,7 +33,7 @@ then complete two digital acquisitions using that new-found knowledge
 with assistance and coaching from the pilot program team.
 
 [Announced in
-March](https://www.whitehouse.gov/blog/2016/03/09/fostering-culture-innovation-across-government-through-acquisition-innovation-labs),
+March](https://obamawhitehouse.archives.gov/blog/2016/03/09/fostering-culture-innovation-across-government-through-acquisition-innovation-labs),
 the pilot was launched in order to help agencies accelerate the adoption
 of emerging digital acquisition practices such as lean-agile and
 human-centered design. This fully-funded U.S. General Services

@@ -1,183 +1,27 @@
 ---
-title: 18F site styleguide
+title: 18F UI style guide
 permalink: /styleguide/
-nav_items:
- - text: Atoms
-   permalink: /styleguide/#atoms
-   collections: ['styleguide']
-   in_subnav: true
-   children:
-     - text: Buttons
-       permalink: /styleguide/#buttons
-       collections: ['styleguide']
-       in_subnav: true
-       children:
-     - text: Embeds
-       permalink: /styleguide/#embeds
-       collections: ['styleguide']
-       in_subnav: true
-       children:
- - text: Molecules
-   permalink: /styleguide/#molecules
-   collections: ['styleguide']
-   in_subnav: true
- - text: Organisms
-   permalink: /styleguide/#organisms
-   collections: ['styleguide']
-   in_subnav: true
-   children:
-     - text: Hero banner – centered text
-       permalink: /styleguide/#hero-banner-centered-text
-       collections: ['styleguide']
-       in_subnav: true
-     - text: Card
-       permalink: /styleguide/#card
-       collections: ['styleguide']
-       in_subnav: true
-     - text: Posts
-       permalink: /styleguide/#posts
-       collections: ['styleguide']
-       in_subnav: true
-
+subpage: Overview
 ---
 
-{% assign dead_end_link = page.permalink | prepend: site.baseurl %}
+### This is the user interface (UI) style guide for [18f.gsa.gov](18f.gsa.gov).
 
+The site uses a custom set of styles that inherit from the [U.S. Web Design System](https://designsystem.digital.gov/) and [18F brand](https://brand.18f.gov) guidelines to create style that is professional, unique, and informative. The guide has a two-fold purpose:
 
-## Atoms
+1. **Speed up onboarding of future maintainers of the site**.
+While most of this guide addresses content needs, there is some [technical documentation]({{ site.baseurl }}/styleguide/for-developers/) for how we have extended Jekyll's out-of-the-box functionality.
+2. **Serve as a living reference for 18F brand of styles.**
 
-### Buttons
-<section class="usa-grid">
-<img src="{{ site.baseurl }}/assets/img/styleguide/button-anatomy.png" class="usa-width-one-third" alt="Image of the dimensions and padding of a button on the 18F site" />
-</section>
+#### Adding a blog post?
+If you are updating or adding a new blog post, go to [Layouts]({{ site.baseurl }}/styleguide/layouts/#blog-post-template) to get started, or go directly to [Blog components]({{ site.baseurl }}/styleguide/blog-components) to learn more about enriching your blog post.
 
-#### Button style light – .usa-button
+#### Adding a project page?
+If you are updating or adding a new project page, go to [Layouts]({{ site.baseurl }}/styleguide/layouts/#project-page-template) to get started.
 
-{% capture codeblock %}
-<section class="usa-grid">
-  <button class="usa-button">Normal</button>
-  <button class="usa-button-hover">Hover</button>
-  <button class="usa-button-active">Active</button>
-  <button class="usa-button-focus">Focus</button>
-  <button class="usa-button-disabled">Disabled</button>
-</section>
-{% endcapture %}
+### Overriding the Design System
 
-{% include details-code.html
-   text="See code"
-   content=codeblock
-   lang="html"
-%}
+While 18f.gsa.gov relies heavily on the U.S. Web Design System, there are several instances where we have overridden styles with our own set of custom stylesheets. This is primarily to align ourselves more directly with the 18F brand set of fonts, colors, and logos. Additional overrides were made to create custom layouts or components to address user needs that are specific to the marketing of the 18F brand.
 
-#### Button style on dark – .usa-button-secondary
-
-{% capture codeblock %}
-<section class="background-dark usa-grid">
-  <button class="usa-button usa-button-secondary">Normal</button>
-  <button class="usa-button-hover usa-button-secondary">Hover</button>
-  <button class="usa-button-active usa-button-secondary">Active</button>
-  <button class="usa-button-focus usa-button-secondary">Focus</button>
-  <button class="usa-button-disabled usa-button-secondary">Disabled</button>
-</section>
-{% endcapture %}
-
-{% include details-code.html
-   text="See code"
-   content=codeblock
-   lang="html"
-%}
-
-### Embed
-
-Here is an example embed and how
-
-{{ "https://www.youtube-nocookie.com/embed/8wcFK2jYlWw" | embed: "Acquisition Gateway Homepage Redesign" }}
-
-```liquid
-{% raw %}{{ "https://www.youtube-nocookie.com/embed/8wcFK2jYlWw" | embed: "Acquisition Gateway Homepage Redesign" }}{% endraw %}
-```
-
-## Molecules
-
-## Organisms
-
-### Hero banner – centered text
-{% capture hero_banner %}
-<section class="background-dark usa-section">
-  <div class="usa-grid content-focus align-center">
-    <h2>We work with federal agencies to approach technology projects in new ways</h2>
-    <a href="{{ dead_end_link }}"><button class="usa-button usa-button-big usa-button-secondary">Our work</button></a>
-  </div>
-</section>
-{% endcapture %}
-
-{% include details-code.html
-   text="See code"
-   content=hero_banner
-   lang="html"
-%}
-
-### Hero banner – left aligned with image
-{% capture hero_banner_image %}
-<section class="background-dark usa-section">
-  <div class="usa-grid content-focus align-center">
-    <h2>We work with federal agencies to approach technology projects in new ways</h2>
-    <a href="{{ dead_end_link }}"><button class="usa-button usa-button-big usa-button-secondary">Our work</button></a>
-
-    {% include feature-image.html
-               image='/assets/img/page-feature/hire-us.jpg' %}
-  </div>
-</section>
-{% endcapture %}
-
-{% include details-code.html
-   text="See code"
-   content=hero_banner_image
-   lang="html"
-%}
-
-
-### Card
-
-{% capture card %}
-<section class="usa-grid usa-section">
-    {% include card-project.html
-       project='fec-gov'
-    %}
-    {% include card-project.html
-       project='hhs-states'
-    %}
-
-    {% include card-project.html
-       project='doi-every-kid-in-a-park'
-    %}
-</section>
-{% endcapture %}
-
-{% include details-code.html
-   text="See code"
-   content=card
-   lang="html"
-%}
-
-
-### Posts
-
-{% capture styleguide_post %}
-  <section class="usa-grid usa-section posts_feature">
-  {% include post.html
-    date='January 6, 2017'
-    title='Dummy title'
-    excerpt='This is an example of a post with plenty of example text to give it length'
-    url=dead_end_link
-  %}
-  </section>
-{% endcapture %}
-
-
-{% include details-code.html
-   text="See code"
-   content=styleguide_post
-   lang="html"
-%}
-
+<a href="{{ site.baseurl }}/styleguide/layouts/">
+  <button class="usa-button">Explore style guide</button>
+</a>

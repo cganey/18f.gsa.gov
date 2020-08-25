@@ -5,7 +5,6 @@ authors:
 - melody
 tags:
 - staff profiles
-- engineering
 - college scorecard
 excerpt: "Holly Allen came to 18F from Dreamworks Animation and the Public Library of Science. She joined 18F in pursuit of a way \"to use technology to address big societal problems.\" After hearing about the U.S. Digital Service and 18F from US Chief Technology Officer, Megan Smith, she was inspired to join."
 description: "Holly Allen came to 18F from Dreamworks Animation and the Public Library of Science. She joined 18F in pursuit of a way \"to use technology to address big societal problems.\" After hearing about the U.S. Digital Service and 18F from US Chief Technology Officer, Megan Smith, she was inspired to join."
@@ -38,7 +37,7 @@ to address big societal problems, I got really inspired.
 **MK: How did you find out about 18F?**
 
 **HA:** Through my alumni network. [Megan
-Smith](https://www.whitehouse.gov/administration/eop/ostp/about/leadershipstaff/smith),
+Smith](https://obamawhitehouse.archives.gov/administration/eop/ostp/about/leadershipstaff/smith),
 the Chief Technology Officer of the United States, and I went to same
 college and when she became CTO, a story about that came through the MIT
 alumni network channels. In the same article, it said that former CTO

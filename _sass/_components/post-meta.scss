@@ -2,17 +2,17 @@
 // ==========================
 
 .post-byline {
-  color: $color-gray;
+  color: color('gray-cool-60');
   font-size: $h5-font-size;
+  display: inline-block;
 }
 
 .post-author {
-  color: $color-gray;
-  font-weight: $font-bold;
+  color: $color-medium;
   text-decoration: none;
 
   &:visited {
-    color: $color-gray;
+    color: $color-medium;
   }
 }
 
@@ -20,26 +20,34 @@
   margin-left: -3px;
 }
 
+// currently a bullet, which renders too large when at the same size as the font
+.post-meta-separator {
+  color: color('gray-cool-60');
+  font-size: 0.8em;
+}
+
 .post-tags {
+  display: block;
+  margin-bottom: 3rem !important;
   a {
-    @include padding(0.6rem null);
-    background-color: $color-medium;
+    @include u-padding-y(0.5);
+
+    background-color: color('gray-cool-5');
+    color: $color-medium;
     display: inline-block;
     font-size: $h6-font-size;
-    font-weight: $font-bold;
     line-height: 1;
     margin-bottom: 4px;
-    margin-right: 0;
     text-decoration: none;
     text-transform: lowercase;
 
     &:hover {
-      background-color: $color-medium-hover;
+      background-color: $color-gray-hover;
     }
 
     &:hover,
     &:visited {
-      color: $color-white;
+      color: $color-medium-hover;
     }
   }
 }

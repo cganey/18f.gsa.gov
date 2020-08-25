@@ -10,6 +10,7 @@ tags:
 excerpt: "Interested in spinning up your own Writing Lab? Use these tips as your starting point."
 description: "Interested in spinning up your own Writing Lab? Use these tips as your starting point."
 image: /assets/blog/writing-lab/writing-lab-screenshot.png
+hero: false
 ---
 
 <figure>
@@ -48,10 +49,11 @@ Along similar lines, it’s always better to be overstaffed than understaffed. I
 
 ## Plan what services you’ll offer
 
-<figure class="align-right">
-	<img src="{{site.baseurl}}/assets/blog/writing-lab/kate-garklavs-confab.jpg" alt="Kate Garklavs speaking at Confab about the Writing Lab">
-	<figcaption>Kate Garklavs speaking at <a href="https://youtu.be/FQVZJKR2Tk4?list=PLnoM8YHGYeM0ZvGiPQO6mHUHJxUEsmoZv">Confab about the Writing Lab</a></figcaption>
+<figure>
+	<img class="image-reduce right-aligned" src="{{site.baseurl}}/assets/blog/writing-lab/kate-garklavs-confab.jpg" alt="Kate Garklavs speaking at Confab about the Writing Lab">
+	<figcaption class="right-aligned-cap">Kate speaking at <a href="https://youtu.be/FQVZJKR2Tk4?list=PLnoM8YHGYeM0ZvGiPQO6mHUHJxUEsmoZv">Confab about the Writing Lab</a></figcaption>
 </figure>
+
 
 After you’ve assembled your core team, you can decide what type of services you’ll offer your clients. Our recommendation is to always prioritize user need, which will help you create a better customer experience by solving the problems people actually have (rather than the ones you _think_ they might have). 
 

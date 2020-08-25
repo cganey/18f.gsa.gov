@@ -4,9 +4,9 @@ date: 2016-07-13 15:00
 authors:
 - 18F
 tags:
-- gsa
-- hiring
-- technology transformation service
+- general services administration
+- join us
+- technology transformation services
 excerpt: "Now’s the time to get involved in transforming how the
 government builds, buys, and shares technology. Now’s the time to lead a
 growing office of talented and motivated people looking to help federal

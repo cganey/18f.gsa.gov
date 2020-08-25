@@ -3,26 +3,39 @@
 {% assign columns = include.columns | default: 3 %}
 
 {% if columns == 2 %}
-  {% assign wds_grid_class = 'usa-width-one-half' %}
+  {% assign wds_grid_class = 'tablet:grid-col-6' %}
 {% else %}
-  {% assign wds_grid_class = 'usa-width-one-third' %}
+  {% assign wds_grid_class = 'tablet:grid-col-4' %}
 {% endif %}
 
-{% assign project_type = include.project_type | default: 'none' %}
-
-<article class="card {{ wds_grid_class }}" data-bucket="{{ project_type }}">
-  <a class="card-link" href="{{ card_link }}">
-    <div role="img" title="{{ include.image_alt }}" class="card-image-bg" style="background-image: url({{ site.baseurl }}{{ include.image_src }});">
+<article class="card {{ wds_grid_class }} margin-bottom-4">
+  <div class="card-link" data-href="{{ card_link }}" tabindex="-1">
+    <div role="img"
+         title="{{ include.image_alt }}"
+         class="card-image-bg {% unless include.image_src %} card-image-svg {% endunless %}"
+         {% if include.image_src %}
+         style="background-image: url({{ site.baseurl }}{{ include.image_src }});"{% endif %}>
+      {% unless include.image_src %}
+        {% if include.image_icon %}
+          {% include svg/icons/{{ include.image_icon }} %}
+        {% else %}
+          {% include svg/icons/monitor.svg %}
+        {% endif %}
+      {% endunless %}
     </div>
     <div class="card-banner">
-      <p class="card-tag">{{ include.agency }}</p>
-      <h3 class="h4">{{ include.tagline }}</h3>
+      {% if include.agency %}
+        <p class="card-tag">{{ include.agency }}</p>
+      {% endif %}
+      {% if card_link and include.tagline %}
+        <a href="{{ card_link }}" tabindex="-1" class="card-link-tagline"><h3 class="h4">{{ include.tagline }}</h3></a>
+      {% endif %}
       <p class="card-description">{{ include.description }}</p>
-      <span class="link-arrow-right">
-        Read more
-        {% include svg/icons/arrow-right.svg %}
-      </span>
     </div>
-  </a>
+    <a href="{{ card_link }}" class="card-cta link-arrow-right" tabindex="0">
+      Read more
+      <span class="usa-sr-only">about {{ include.tagline }}</span>
+      {% include svg/icons/arrow-right.svg %}
+    </a>
+  </div>
 </article>
-

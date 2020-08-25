@@ -1,5 +1,5 @@
 ---
-title: "String"
+title: String
 authors:
   type: Array
   matches: _data/author.yml
@@ -9,11 +9,11 @@ tags:
   rules: [no-dash, lowercase]
 excerpt: "String"
 config:
-  path: '_posts'
+  path: _posts
   ignore:
   - README.md
   - ..
   - .
   - .DS_Store
-  optional: ['tumblr_url', 'layout', 'date', 'image', 'image_alt']
+  optional: ['tumblr_url', 'layout', 'date', 'image', 'image_alt', 'image_figcaption']
 ---

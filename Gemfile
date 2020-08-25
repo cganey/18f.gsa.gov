@@ -1,41 +1,40 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
-gem 'redcarpet'
-gem 'jekyll', '~> 3.1'
-gem 'html-proofer'
-gem 'accesslint-ci', '0.2.6'
+ruby '~>2.6.3'
+
+gem 'accesslint-ci', '0.2.8'
+gem 'html-proofer', '~> 3.6.0'
+gem 'jekyll', '~> 3.9'
+gem 'jemoji', '>= 0.11.1'
+gem 'kramdown-parser-gfm'
+gem 'parallel'
 
 group :jekyll_plugins do
-  if ENV['FAST_BUILDS'] == 'true'
-    puts 'not using jekyll-archives because its sloooooooooow'
-  else
-    gem 'jekyll-archives', git: 'https://github.com/18F/jekyll-archives.git'
-  end
-
-  gem 'jekyll_pages_api'
-  gem 'jekyll_pages_api_search'
-  gem 'jekyll-sitemap'
+  gem 'jekyll-archives', git: 'https://github.com/jekyll/jekyll-archives.git', ref: '112c508'
+  gem 'jekyll-feed'
+  gem 'jekyll_frontmatter_tests', '~> 0.1.0'
   gem 'jekyll-paginate'
   gem 'jekyll-redirect-from'
-  gem 'jekyll_frontmatter_tests'
-  gem 'jekyll-feed'
   gem 'jekyll-seo-tag'
+  gem 'jekyll-sitemap'
+  gem 'jekyll_pages_api'
+  gem 'jekyll_pages_api_search', '~> 0.4.5'
+  gem 'jekyll_oembed'
 end
-gem 'jemoji'
 
 group :development do
-  gem 'capybara'
-  gem 'chromedriver-helper'
+  gem 'capybara', '>= 3.29.0'
+  gem 'chromedriver-helper', '>= 2.1.1'
   gem 'colorize'
   gem 'pry'
-  gem 'rack-jekyll'
+  gem 'rack', '>=2.1.4'
+  gem 'rack-jekyll', git: 'https://github.com/adaoraul/rack-jekyll', ref: 'a997bd0'
   gem 'rb-readline'
   gem 'rspec'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>= 3.1.0'
 end
 
 group :test do
-  gem 'simplecov'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
+  gem 'simplecov'
 end

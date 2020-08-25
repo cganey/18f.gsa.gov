@@ -5,7 +5,7 @@ authors:
 tags:
 - agile bpa
 - acquisition services
-
+- product launch
 description: "Today, we're pleased to officially say that Pool Three of the Agile BPA is ready to launch. Although we announced the awardees earlier this year, there were multiple protests related to the Agile BPA. Last night, we learned that the final protest has been resolved."
 excerpt: "Today, we're pleased to officially say that Pool Three of the Agile BPA is ready to launch. Although we announced the awardees earlier this year, there were multiple protests related to the Agile BPA. Last night, we learned that the final protest has been resolved."
 date: 2015-12-17 14:00
@@ -36,4 +36,4 @@ As we said before, these companies "represent large companies and small business
 
 We deeply appreciate the work of our partners within the GSA, particularly the Federal Acquisition Service Southeast Sunbelt Region (Region 4) Integrated Technology Service and Legal Counsel, and the Department of Justice.
 
-Now that we’re past this final hurdle, we can officially say that the Agile BPA is live. If your federal agency is interested in learning more, feel free to email us at 18Finquiries@gsa.gov or visit [the Agile BPA site](https://pages.18f.gov/ads-bpa).
+Now that we’re past this final hurdle, we can officially say that the Agile BPA is live. If your federal agency is interested in learning more, feel free to email us at inquiries18F@gsa.gov or visit [the Agile BPA site](https://pages.18f.gov/ads-bpa).

@@ -7,6 +7,8 @@ This document is about how to contribute to the 18f.gsa.gov site. This process l
     - [Standards and benchmarks](#standards-and-benchmarks)
 * [Public domain](#public-domain)
 
+No matter who you are, if you spot an error, omission, or bug, you're welcome to open an issue in this repo!
+
 ## Public contributions
 
 We're so glad you're thinking about contributing to an 18F open source project! If you're unsure about anything, just [send us an email](mailto:18f@gsa.gov) with your question — or submit the issue or pull request anyway. The worst that can happen is you'll be politely asked to change something. We love all friendly contributions.
@@ -20,11 +22,11 @@ We encourage you to read this project's CONTRIBUTING policy (you are here), its 
 
 ## 18F contributions
 
-There is a team actively working on the site. You can find us in Slack in the #18f-site or #beta-18F-site channels (limited access).
+There is a team actively working on the site. You can find us in Slack in the #18f-site or #beta-18F-site channels (access is limited to 18F employees).
 
 ### Branches
 
-Any 18F team member should be able to make a branch of the site and submit a pull request. Doing so will also generate a preview URL we can use to inspect your changes.
+Any 18F team member should be able to make a branch of the site and submit a pull request. Doing so will also generate a preview URL we can use to inspect your changes. Please do not submit a pull request from a fork of the site, because that does not permit us to inspect your changes.
 
 Because new blog posts are published several times a week, we use several branches to manage parallel work in a predictable way:
 
@@ -35,22 +37,24 @@ Because new blog posts are published several times a week, we use several branch
 
 ### Submitting pull requests
 
-If you submit your Pull Request (PR) from the Github website, a form will appear and will be populated with [a template](PULL_REQUEST_TEMPLATE.md). If you are submitting via the Github Client app, a template will not appear and you will need to populate it yourself. You can find the text [here]. If you are not on the 18F Site team, feel free to disregard the template and someone from the team will follow up with you.
+If you submit your Pull Request (PR) from the Github website, a form will appear and will be populated with [a template](PULL_REQUEST_TEMPLATE.md). If you are submitting via the Github Client app, a template will not appear and you will need to populate it yourself. You can find the text [here](PULL_REQUEST_TEMPLATE.md). If you are not on the 18F site team, feel free to disregard the template and someone from the team will follow up with you.
 
-To fill out the template, please start by attaching any issues that this PR addresses. If the PR changes are not associated with an issue, please leave a brief message detailing what was wrong with the site before, and how it _should_ be.
+To fill out the template, please start by attaching any issues your PR addresses. If the PR changes are not associated with an issue, please leave a brief message detailing what was wrong with the site before, and how it _should_ be.
 
 If the nature of the PR is visual, please replace all instances of `BRANCH_NAME` with the name of the branch that is being merged.
 
-Complete the PR message by detailing all fixes and tagging Github users who should review the work, with a note about what they should be reviewing. In general:
+Complete the PR message by detailing all fixes and tagging GitHub users who should review the work, with a note about what they should be reviewing. In general:
 
-- Don’t merge your own PRs
+- If you are not an admin or member of the 18F site team, tag someone who you would like to review and merge your PR
+- If you are an admin for the repo or a member of the 18F site team, you are responsible for merging your own PRs **after they have been reviewed and approved by someone else on the team**
+- If you have been asked to review a PR, leave a clear message indicating your approval, either through the formal PR review feature or by commenting (at the very least, with a note saying `LGTM`, or "Looks good to me")
 - If your PR includes many small, incremental commits, consider squashing them
-- Don’t merge until linters pass, unless reviewers approve exceptions
+- Don’t merge until linters pass, unless you have discussed with reviewers and approved exceptions
 
 ### Front end architecture
 
 This site is based on the [U.S.
-Web Design Standards](https://standards.usa.gov/) (WDS). It is developed using [Jekyll](https://jekyllrb.com/), a static site generator based on the Ruby programming language.
+Web Design System](https://designsystem.digital.gov/) (WDS). It is developed using [Jekyll](https://jekyllrb.com/), a static site generator based on the Ruby programming language.
 
 We default to using [semantic HTML5](http://www.w3schools.com/html/html5_semantic_elements.asp).
 
@@ -80,6 +84,16 @@ This site does not use any heavy JavaScript frameworks, and should always work w
 
 - jQuery is included in the WDS
 - Ruby gems is used for front end dependency management
+
+## Accessibility
+
+To test the site locally for accessibility errors, we use [pa11y-ci](https://github.com/pa11y/ci) to periodically test the site for accessibility concerns.
+
+To set up, do the following:
+
+1. `npm install`
+2. `npm install -g pa11y-ci`
+3. `npm run pa11y-ci local`
 
 ## Standards and benchmarks
 

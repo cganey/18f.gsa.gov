@@ -4,8 +4,7 @@ date: 2016-04-05
 authors:
 - melody
 tags:
-- our projects
-- web design standards
+- web design system
 - u.s. digital service
 - open source
 - design

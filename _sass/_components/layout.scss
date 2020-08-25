@@ -30,13 +30,67 @@
   }
 }
 
-.usa-flex-vertically-top {
-  margin-bottom: $section-margins;
+.usa-grid-line {
+  height: 1px;
 }
 
-@include media($medium-screen) {
+.usa-grid-line-hww {
+  border-top: 0.5rem solid;
+  border-color: $color-medium;
+  margin-top: $section-margins;
+}
+
+.usa-flex-baseline {
+  align-items: baseline;
+}
+
+.usa-flex-end {
+  align-items: flex-end;
+}
+
+.usa-spacer {
+  margin-bottom: $theme-site-margins-width;
+
+  > * {
+    margin-bottom: $spacer-margins;
+  }
+}
+
+.usa-flex-pull-right {
+  > *:first-child {
+    flex-grow: 1;
+  }
+
+  > *:last-child {
+    margin-left: 0;
+    min-width: 200px;
+    text-align: left;
+  }
+}
+
+.usa-flex-always {
+  display: flex;
+}
+
+@include at-media('tablet') {
   .usa-flex {
     display: flex;
+  }
+
+  .usa-flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .usa-flex-vertically-top {
+    margin-bottom: $section-margins;
+  }
+
+  .usa-flex-pull-right {
+    > *:last-child {
+      float: right;
+      margin-left: $theme-site-margins-width;
+      text-align: right;
+    }
   }
 
   .usa-flex-vertically-top {
@@ -51,20 +105,40 @@
 }
 
 .usa-section {
-  @include padding($section-margins null);
+  @include u-padding-y($theme-site-margins-width);
+
+  @include at-media('tablet') {
+    @include u-padding-y($section-margins);
+  }
 
   .page-lead {
     margin-top: 0;
   }
 }
 
+.usa-section-bottom {
+  @include u-padding-right($theme-site-margins-width);
+
+  @include at-media('tablet') {
+    @include u-padding-right($section-margins);
+  }
+}
+
 .background-gray {
-  background-color: $color-gray-lightest;
+  background-color: color('gray-cool-5');
+}
+
+.background-medium {
+  background-color: $color-medium;
 }
 
 .background-dark {
   background-color: $color-dark;
-  color: $color-white;
+}
+
+.background-medium,
+.background-dark {
+  color: color('white');
   -webkit-font-smoothing: antialiased;
 
   h1,
@@ -74,17 +148,17 @@
   h5,
   h6,
   p {
-    color: $color-white;
+    color: color('white');
   }
 
   .section-heading {
     color: $color-bright;
-    display: inline;
     letter-spacing: 0.5px;
   }
 
   h2 {
     letter-spacing: 0.5px;
+    margin-bottom: 2rem;
   }
 
   a
@@ -117,42 +191,39 @@
   input[type="week"],
   textarea,
   select {
-    border-color: $color-white;
+    border-color: color('white');
   }
 }
-
-// boone did this, we should do it the right way eventually
-.background-dark .usa-button.usa-button-secondary:hover {
-   color: $color-black;
-}
-
-// end of stuff boone did
 
 .header_border,
 .single-post {
   header[role=banner] {
-    border-bottom: 1px solid #cccccc; // See if we can use a WDS color
+    border-bottom: 1px solid color('gray-cool-10');
   }
 }
 
 // Dark blue page intros
 .section-intro {
-  header {
-    max-width: 81.2rem; // Width of 10 columns
-  }
-
   .section-heading {
     margin-bottom: 0;
   }
 
   .section-heading-alt {
-    font-size: $h2-font-size;
+    font-size: $h3-font-size;
   }
 
   h2 {
     display: inline;
     font-size: $h2-font-size;
-    font-weight: $font-bold;
+    font-weight: $theme-font-weight-bold;
+  }
+}
+
+.section-intro-header {
+  max-width: 81.2rem; // Width of 10 columns
+
+  @include at-media('tablet') {
+    @include grid-col(9);
   }
 }
 
@@ -166,7 +237,8 @@
 }
 
 .content-focus {
-  @include margin(0 auto);
+  @include u-margin-y(0);
+  @include u-margin-x(auto);
   max-width: 64.063rem; // 8 column width at full screen
 }
 
@@ -177,12 +249,5 @@
 }
 
 .content-focus.content-wide {
-  max-width: $site-max-width;
-}
-
-.usa-content {
-  ol,
-  ul {
-    max-width: $text-max-width;
-  }
+  max-width: $theme-site-max-width;
 }

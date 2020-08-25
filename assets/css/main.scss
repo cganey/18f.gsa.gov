@@ -12,7 +12,7 @@
 // USWDS
 // ==========================
 
-@import "_libs/wds/stylesheets/all";
+@import "main";
 @import "_core/mixins";
 
 // Core
@@ -36,7 +36,6 @@
 @import "_components/post-feature";
 @import "_components/nav-mobile";
 @import "_components/nav-accordion";
-@import "_components/nav-subnav";
 @import "_components/tag-index";
 @import "_components/blog-post";
 @import "_components/blog-index";
@@ -46,16 +45,35 @@
 @import "_components/post-meta";
 @import "_components/search-results";
 @import "_components/footer";
+@import "_components/usa_anchor";
+@import "_components/social-links";
 @import "_components/card";
 @import "_components/filters";
 @import "_components/lists";
 @import "_components/links";
 @import "_components/icon-list";
+@import "_components/sticky";
+@import "_components/breadcrumb";
+@import "_components/icons";
+@import "_components/section-info";
+@import "_components/accordion";
+@import "_components/newsletter";
+@import "_components/image-adjustments";
+@import "_components/nav-subnav";
+@import "_components/oembed";
+@import "_components/search";
+@import "_components/section-contact-cta";
+@import "_components/skipnav";
 
 // 18F site templates
 // ==========================
 
 @import "_templates/home";
+@import "_templates/guides";
 @import "_templates/how-we-work";
 @import "_templates/what-we-deliver";
-@import "_templates/join";
+
+//18F styleguide
+// ===========================
+
+@import "_styleguide/all";

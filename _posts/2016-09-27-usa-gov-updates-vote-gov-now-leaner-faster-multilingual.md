@@ -4,7 +4,7 @@ date: 2016-09-27 14:00
 authors:
 - yoz
 tags:
-- technology transformation service
+- technology transformation services
 - user-centered design
 excerpt: "One year ago this week, we launched vote.gov. It was a concise and simple site with a single mission: direct citizens through the voter registration process as quickly as possible. Today, on National Voter Registration Day, we're launching this new version."
 description: "One year ago this week, we launched vote.gov. It was a concise and simple site with a single mission: direct citizens through the voter registration process as quickly as possible. Today, on National Voter Registration Day, we're launching this new version."
@@ -19,7 +19,7 @@ hero: false
 *Originally published on [USA.gov](https://blog.usa.gov/the-new-vote-gov-leaner%2C-faster-and-multi-lingual)*
 
 [One year ago this
-week](https://blog.usa.gov/usa-gov-launches-vote-usa-gov-to-help-citizens-register-to-vote), we launched [vote.gov](https://vote.gov/) (also known as vote.usa.gov). It’s a concise and simple site with a single mission: direct citizens through the voter registration process as quickly as possible. It was created by a joint team of [USA.gov](https://www.usa.gov/) staffers and [Presidential Innovation Fellows](https://www.whitehouse.gov/innovationfellows), all of whom work within the [General Services Administration](https://www.gsa.gov/).
+week](https://blog.usa.gov/usa-gov-launches-vote-usa-gov-to-help-citizens-register-to-vote), we launched [vote.gov](https://vote.gov/) (also known as vote.usa.gov). It’s a concise and simple site with a single mission: direct citizens through the voter registration process as quickly as possible. It was created by a joint team of [USA.gov](https://www.usa.gov/) staffers and [Presidential Innovation Fellows](https://obamawhitehouse.archives.gov/innovationfellows), all of whom work within the [General Services Administration](https://www.gsa.gov/).
 
 Did it work? Yes. In fact, it worked *so* well that Facebook made it the destination for their 2016 voter registration drive. Last Friday, it received over five million user visits, among the highest count ever recorded by a U.S. government website in a single day.
 

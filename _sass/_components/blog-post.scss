@@ -4,19 +4,34 @@
 .post-feature_image {
   background-position: center;
   background-size: cover;
-  height: 36rem;
+  height: 20rem;
+  margin: 0;
+  position: relative;
 
-  @include media($medium-screen) {
-    height: 40rem;
+  @include at-media('tablet') {
+    height: 23rem;
+  }
+
+  figcaption {
+    background: rgba(color('gray-cool-5'), 0.85);
+    bottom: 0;
+    color: $color-black;
+    line-height: $paragraph-line-height;
+    font-size: $tiny-font-size;
+    font-style: italic;
+    max-width: 40%;
+    padding: ($spacer-margins / 2) $spacer-margins;
+    position: absolute;
+    right: 0;
   }
 }
 
 .single-post {
   article {
-    @include margin(0 null $section-margins null);
+    @include u-margin-bottom($section-margins);
 
-    @include media($medium-screen + 200px) {
-      @include margin($section-margins auto);
+    @include at-media('tablet-lg') {
+      @include u-margin-x(auto);
       max-width: 61rem;
     }
 
@@ -25,7 +40,7 @@
     }
 
     img {
-      @include margin($site-margins null);
+      @include u-margin-top($theme-site-margins-width);
     }
 
     img.pquote-img,
@@ -34,39 +49,69 @@
       margin-right: 0;
       margin-top: 0;
 
-      @include media($medium-screen) {
+      @include at-media('tablet') {
         margin-bottom: 0;
         margin-right: $paragraph-margins;
       }
     }
 
     figure {
-      @include margin($site-margins null);
+      @include u-margin-top($theme-site-margins-width);
       text-align: center; // center image if less than full width
 
       img {
-        @include margin(0 null);
-      }
-    }
-
-    figcaption {
-      font-size: $h6-font-size;
-      margin-top: 1rem;
-      text-align: left;
-
-      &.align-center {
-        text-align: center;
+        @include u-margin-top(0);
       }
     }
   }
 }
 
 .post-header {
-  margin-bottom: $section-margins;
+  margin-bottom: 4rem;
 }
 
 .posts {
   ul {
     @include unstyled-list;
   }
+}
+
+// ===icons====
+.icon-list-blog {
+  display: flex;
+  margin-bottom: 1rem;
+
+  @include at-media('tablet') {
+    margin-bottom: 1rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.icon-list-image-blog {
+  margin: 0;
+  margin-right: $theme-site-margins-width;
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.icon-list-text-blog {
+  margin-top: 2em;
+
+  .p-bold {
+    margin-bottom: $spacer-margins;
+  }
+
+  &:last-of-type p {
+    margin-top: 0;
+  }
+}
+
+.icon-list-wrapper-blog {
+  padding-left: 0;
 }

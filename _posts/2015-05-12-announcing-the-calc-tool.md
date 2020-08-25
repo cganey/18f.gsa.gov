@@ -6,10 +6,11 @@ authors:
 - brethauer
 tags:
 - procurement
-- gsa
+- general services administration
 - acquisition services
 - calc
 - agency work
+- product launch
 excerpt: "Today, 18F and the General Services Administration (GSA) launched a powerful new labor category and pricing research tool to help the federal contracting community make smarter, faster buying decisions."
 description: "Today, 18F and the General Services Administration (GSA) launched a powerful new labor category and pricing research tool to help the federal contracting community make smarter, faster buying decisions."
 image: /assets/blog/calc-announcement/calc_homepage.jpg
@@ -62,4 +63,4 @@ procurement-related tools), please get in touch with us at
 
 ## Other digital tools
 
-CALC is one of the numerous digital tools including [OASIS Discovery](http://www.oasisdiscovery.com/), PM/CPI Prices Paid Visualization, and the Statement of Work Library available on the [Professional Services Category Hallway](https://hallways.cap.gsa.gov/) that support and improve how the federal community acquires professional services.
+CALC is one of the numerous digital tools including [OASIS Discovery](https://discovery.gsa.gov/), PM/CPI Prices Paid Visualization, and the Statement of Work Library available on the [Professional Services Category Hallway](https://hallways.cap.gsa.gov/) that support and improve how the federal community acquires professional services.

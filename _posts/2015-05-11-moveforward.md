@@ -29,18 +29,18 @@ Administration (GSA) headquarters.
 The government-employee only event featured the entire digital services
 family including members of [18F](https://18f.gsa.gov/), the
 [Presidential Innovation
-Fellows](https://www.whitehouse.gov/innovationfellows) (PIF), the
+Fellows](https://obamawhitehouse.archives.gov/innovationfellows) (PIF), the
 [U.S. Digital
-Service](https://www.whitehouse.gov/digital/united-states-digital-service)
+Service](https://obamawhitehouse.archives.gov/digital/united-states-digital-service)
 (USDS), the [VA Digital Service](http://www.va.gov/ds/), and the
 [White House Office of Science and Technology
-Policy](https://www.whitehouse.gov/administration/eop/ostp). The
+Policy](https://obamawhitehouse.archives.gov/administration/eop/ostp). The
 afternoon event filled with workshopping, lightning talks, and product
 demos was part pep rally and part brown bag.
 
 “A sort of digital flash mob,” said [Ryan Panchadsaram, the federal
 government’s deputy chief technology
-officer](https://www.whitehouse.gov/administration/eop/ostp/about/leadershipstaff),
+officer](https://obamawhitehouse.archives.gov/administration/eop/ostp/about/leadershipstaff),
 as he pumped up the crowd. The objective of moveForward(100); is to
 regularly demo the awesome work of federal technologists, recently
 deployed or planned for release in the next 100 days.
@@ -49,7 +49,7 @@ deployed or planned for release in the next 100 days.
 deputy executive director of 18F, as she greeted the crowd in the GSA
 conference center. The demonstration session was kicked off by [U.S.
 Chief Technology Officer Megan
-Smith](https://www.whitehouse.gov/administration/eop/ostp/about/leadershipstaff/smith).
+Smith](https://obamawhitehouse.archives.gov/administration/eop/ostp/about/leadershipstaff/smith).
 She recognized the tremendous work being done to increase efficiency and
 transparency across the federal government.
 
@@ -59,7 +59,7 @@ things we can do to help the American people,” said Smith.
 18F and PIF teams shared why certain projects were selected and the
 impact of the innovative project solutions. The presentations included a
 PIF project [using data and technology to improve community
-policing](https://www.whitehouse.gov/blog/2015/04/09/using-technology-and-data-improve-community-policing-police-data-initiative);
+policing](https://obamawhitehouse.archives.gov/blog/2015/04/09/using-technology-and-data-improve-community-policing-police-data-initiative);
 an 18F project resulting in an automated tool that provides better
 access to Federal Elections Commission data; a tool that streamlines the
 immigration application process; and a PIF [crowd-sourced mapping
@@ -80,8 +80,7 @@ process.” She expressed the honor to have the opportunity to improve the
 immigration and visa processes for other families, as well as streamline
 the workflow for USCIS employees.
 
-<p float: center><blockquote class="twitter-tweet tw-align-center" lang="en"><p lang="en" dir="ltr">Some <a href="https://twitter.com/WhiteHouse">@WhiteHouse</a> Pres Innov Fellows on policing data at moveForward(100) / <a href="https://twitter.com/whitehouseostp">@whitehouseostp</a> talks <a href="https://twitter.com/18F">@18F</a> <a href="https://twitter.com/usgsa">@usgsa</a> <a href="https://twitter.com/hashtag/govlife?src=hash">#govlife</a> <a href="http://t.co/QTqfMmbhFs">pic.twitter.com/QTqfMmbhFs</a></p>&mdash; Andrew Stroup (@stroupaloop) <a href="https://twitter.com/stroupaloop/status/593525508945489921">April 29, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+{% oembed https://twitter.com/stroupaloop/status/593525508945489921 %}
 
 Noah Manger, an 18F designer and web developer, discussed his team's [work with the
 Federal Election
@@ -94,11 +93,7 @@ ultimate goal is to provide a tool that allows all members of the public
 — even those without deep knowledge of the election process — to quickly
 and easily access relevant data.
 
-<blockquote class="twitter-tweet tw-align-center" lang="en"><p lang="en" dir="ltr">It&#39;s also great to see the awesome work that peers at <a href="https://twitter.com/USDS">@USDS</a>, <a href="https://twitter.com/18F">@18F</a>, and elsewhere are doing to make the govt work better. <a href="https://twitter.com/hashtag/moveforward100?src=hash">#moveforward100</a></p>&mdash; Will Barton (@gulielmus) <a href="https://twitter.com/gulielmus/status/593525730480271360">April 29, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<br />
-<blockquote class="twitter-tweet tw-align-center" lang="en"><p lang="en" dir="ltr">The <a href="https://twitter.com/hashtag/digitalservices?src=hash">#digitalservices</a> teams in the USG are AMAZING. Awesome demos today from <a href="https://twitter.com/18F">@18F</a>, PIFs + <a href="https://twitter.com/USDS">@USDS</a> at <a href="https://twitter.com/hashtag/moveforward100?src=hash">#moveforward100</a> <a href="http://t.co/2oZ491TUP2">pic.twitter.com/2oZ491TUP2</a></p>&mdash; Cori Zarek (@corizarek) <a href="https://twitter.com/corizarek/status/593525117210103809">April 29, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% oembed https://twitter.com/corizarek/status/593525117210103809 %}
 
 Leah Bannon, an 18F product manager, and Charles Worthington of USDS
 highlighted [analytics.usa.gov](https://analytics.usa.gov/) (the
@@ -114,8 +109,7 @@ cheered with the moveForward(100); group assembled, she said we
 represent “the government of the 21st century.” Then, Roth took a selfie
 with the group.
 
-<blockquote class="twitter-tweet tw-align-center" lang="en"><p lang="en" dir="ltr">The <a href="https://twitter.com/USDS">@USDS</a> and <a href="https://twitter.com/18F">@18F</a> teams saying hi to <a href="https://twitter.com/DeniseUSGSA">@DeniseUSGSA</a> at the <a href="https://twitter.com/hashtag/moveForward100?src=hash">#moveForward100</a> event. <a href="http://t.co/uncSFpyaEH">pic.twitter.com/uncSFpyaEH</a></p>&mdash; GSA (@usgsa) <a href="https://twitter.com/usgsa/status/593540092871970817">April 29, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% oembed https://twitter.com/usgsa/status/593540092871970817 %}
 
 Former U.S. Chief Technology Officer Todd Park closed the evening, reminding the group assembled
 that moveForward(100); was designed “to let everyone know that
